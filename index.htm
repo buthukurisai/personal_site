@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Ganesh Reddy Buthukuri</title>
+    <title>Sai Ganesh Reddy Buthukuri - Digital Architect & Sentinel</title>
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -24,6 +24,7 @@
             color: var(--text-primary);
             line-height: 1.6;
             display: flex;
+            flex-direction: column; /* Allow content to stack vertically */
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -101,6 +102,11 @@
             z-index: 1; 
             border: 1px solid rgba(0, 255, 255, 0.1); 
             backdrop-filter: blur(3px); 
+            margin-bottom: 20px; /* Space for footer */
+            flex-grow: 1; /* Allow container to take available space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         @keyframes fadeIn {
@@ -141,36 +147,34 @@
             display: inline-block;
             color: var(--text-primary); 
             font-weight: 700;
-            /* Transition specifically for transform, color will be JS controlled */
             transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); 
             will-change: transform, color, text-shadow;
             cursor: pointer;
             white-space: nowrap;
-            position: relative; /* Needed for pseudo-element underline */
+            position: relative; 
         }
 
         /* --- Dynamic Underline Effect for Keywords --- */
         .keyword-hover::after {
             content: '';
             position: absolute;
-            left: 50%; /* Start from center */
-            bottom: -5px; /* Position below text */
-            width: 0; /* Initially no width */
-            height: 2px; /* Thickness of underline */
-            background-color: var(--dynamic-hover-color); /* Matches current hover color */
-            transition: width 0.3s ease-out, left 0.3s ease-out, background-color 0.1s; /* Smooth animation */
-            transform: translateX(-50%); /* Center the underline */
+            left: 50%; 
+            bottom: -5px; 
+            width: 0; 
+            height: 2px; 
+            background-color: var(--dynamic-hover-color); 
+            transition: width 0.3s ease-out, left 0.3s ease-out, background-color 0.1s; 
+            transform: translateX(-50%); 
         }
 
         .keyword-hover:hover::after {
-            width: 100%; /* Expand to full width on hover */
-            left: 0; /* Shift to left edge */
-            transform: translateX(0); /* Remove center transform */
+            width: 100%; 
+            left: 0; 
+            transform: translateX(0); 
         }
 
         .keyword-hover:hover {
             transform: scale(1.15);
-            /* Color and shadow are now entirely set by JS, including transitions within JS */
         }
 
         .button-container {
@@ -181,7 +185,7 @@
             display: inline-block;
             padding: 15px 30px; 
             margin: 0 15px; 
-            border: 2px solid var(--dynamic-hover-color); /* Buttons now use the dynamic hover color for their border */
+            border: 2px solid var(--dynamic-hover-color); 
             color: var(--dynamic-hover-color);
             text-decoration: none;
             text-transform: uppercase;
@@ -212,14 +216,44 @@
 
         .button:hover {
             color: var(--bg-dark); 
-            border-color: var(--dynamic-hover-color); /* Ensure border matches dynamic color */
+            border-color: var(--dynamic-hover-color); 
             transform: translateY(-5px); 
-            box-shadow: 0 5px 15px var(--dynamic-hover-color-rgba), 0 0 20px var(--dynamic-hover-color-rgba-light); /* Dynamic shadow */
+            box-shadow: 0 5px 15px var(--dynamic-hover-color-rgba), 0 0 20px var(--dynamic-hover-color-rgba-light); 
         }
 
         .button:active {
             transform: scale(0.95); 
             box-shadow: 0 0 5px var(--dynamic-hover-color);
+        }
+
+        /* --- Footer Styles --- */
+        .footer {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark footer */
+            color: var(--text-secondary);
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(0, 255, 255, 0.1); /* Subtle glowing border */
+            z-index: 1; /* Ensure it's above background */
+        }
+
+        .footer p {
+            margin: 5px 0;
+            padding: 0; /* Override default paragraph padding */
+            color: var(--text-secondary); /* Ensure footer text is muted */
+        }
+
+        .footer a {
+            color: var(--accent-glow); /* Link color matches accent */
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer a:hover {
+            color: var(--text-primary);
+            text-decoration: underline;
         }
 
         /* Responsive adjustments */
@@ -240,12 +274,15 @@
             .container {
                 padding: 25px;
             }
+            .footer {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>// Welcome //</h1>
+        <h1>// Engage //</h1>
         <p>I'm <span class="keyword-hover">Sai Ganesh Reddy Buthukuri</span>, a dedicated <span class="keyword-hover">Cybersecurity Specialist</span> and <span class="keyword-hover">Software Developer</span>, recently graduated with an <span class="keyword-hover">MSc in Cybersecurity</span> from the <span class="keyword-hover">University of Wolverhampton</span>. My expertise is solidified by practical experience, including engineering secure <span class="keyword-hover">RESTful APIs</span> as a Java Programmer and mastering <span class="keyword-hover">Microservices</span> architecture. My <span class="keyword-hover">MSc project</span> leveraged <span class="keyword-hover">NLP</span> and <span class="keyword-hover">BERT</span> for cutting-edge <span class="keyword-hover">phishing detection</span>, demonstrating my commitment to innovative <span class="keyword-hover">security solutions</span>.</p>
 
         <p>I hold key certifications: <span class="keyword-hover">Microsoft Certified: Azure Fundamentals</span>, <span class="keyword-hover">Azure Security Engineer Associate</span>, and <span class="keyword-hover">Security Operations Analyst Associate</span>. My technical toolkit spans <span class="keyword-hover">Java</span>, <span class="keyword-hover">Python</span>, <span class="keyword-hover">JavaScript</span>, <span class="keyword-hover">NodeJS</span>, <span class="keyword-hover">SQL</span>, and <span class="keyword-hover">NoSQL databases</span>, complemented by essential tools like <span class="keyword-hover">Git</span> and <span class="keyword-hover">Postman</span>. Beyond code, I bring strong <span class="keyword-hover">problem-solving</span>, <span class="keyword-hover">critical thinking</span>, and <span class="keyword-hover">collaborative skills</span>, driven by a keen <span class="keyword-hover">compliance mindset</span>.</p>
@@ -259,9 +296,14 @@
         </div>
     </div>
 
+    <footer class="footer">
+        <p>&copy; 2025 Sai Ganesh Reddy Buthukuri. All Rights Reserved.</p>
+        <p>Designed and Developed by <a href="#">Sai Ganesh Reddy Buthukuri</a></p>
+        <p>Built with Passion and Code.</p>
+        </footer>
+
     <script>
         const keywords = document.querySelectorAll('.keyword-hover');
-        // Define a broader set of vibrant, tech-y colors
         const hoverColors = [
             '#00FFFF',  // Cyan
             '#FFD700',  // Gold
@@ -274,7 +316,6 @@
             '#FFFF00'   // Yellow
         ];
 
-        // Function to convert hex to rgba for box-shadow
         function hexToRgba(hex, opacity) {
             let r = 0, g = 0, b = 0;
             if (hex.length == 4) { // #RGB
@@ -293,26 +334,19 @@
             keyword.addEventListener('mouseover', function() {
                 const randomColor = hoverColors[Math.floor(Math.random() * hoverColors.length)];
                 
-                // Apply transition for color and shadow directly here for smoother dynamic changes
                 this.style.transition = 'transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.3s ease-out, text-shadow 0.3s ease-out';
                 this.style.color = randomColor;
-                this.style.textShadow = `0 0 10px ${randomColor}, 0 0 20px ${hexToRgba(randomColor, 0.5)}`; // Double glow for pop
+                this.style.textShadow = `0 0 10px ${randomColor}, 0 0 20px ${hexToRgba(randomColor, 0.5)}`;
 
-                // Update CSS variable for dynamic elements (buttons, underline)
                 document.documentElement.style.setProperty('--dynamic-hover-color', randomColor);
                 document.documentElement.style.setProperty('--dynamic-hover-color-rgba', hexToRgba(randomColor, 0.4));
                 document.documentElement.style.setProperty('--dynamic-hover-color-rgba-light', hexToRgba(randomColor, 0.6));
             });
 
             keyword.addEventListener('mouseout', function() {
-                // Remove inline styles to allow CSS default to take over, but smoothly
                 this.style.transition = 'transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.4s ease-out, text-shadow 0.4s ease-out';
                 this.style.color = 'var(--text-primary)'; 
                 this.style.textShadow = 'none';
-
-                // We don't reset --dynamic-hover-color on mouseout immediately, 
-                // it stays as the last hovered color until another keyword is hovered.
-                // This creates a continuous, albeit subtly changing, theme.
             });
         });
     </script>
